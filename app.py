@@ -115,7 +115,7 @@ def evaluate_model(model_type, model, X_train, X_test, y_train, y_test):
 
 def evaluate_all_models(X_train, X_test, y_train, y_test):
     models = {
-        'Logistic Regression': LogisticRegression(), 'kNN': KNeighborsClassifier(n_neighbors=3), 'Decision Tree': DecisionTreeClassifier(), 'Random Forest': RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=0, bootstrap=True), 'Gradient Boosting Classifier': GradientBoostingClassifier()
+        'Logistic Regression': LogisticRegression(), 'kNN': KNeighborsClassifier(n_neighbors=3), 'Decision Tree': DecisionTreeClassifier(), 'Random Forest': RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=0, bootstrap=True)
     }
     model_performance = [evaluate_model(name, model, X_train, X_test, y_train, y_test) for name, model in models.items()]
     return model_performance
