@@ -35,8 +35,13 @@ st.dataframe(df.head())
 
 st.write("We are removing unnecessary columns; specifically, we are dropping the 'id' and 'attack_cat' columns.")
 
-st.write("As we can see below, in the UNSW-NB15 Dataset, there are 9 attacks")
-st.write(df["attack_cat"].unique())
+# Your data and plot generation
+fig, ax = plt.subplots(figsize=(8, 8))
+df['label'].value_counts().plot(kind='pie', labels=['normal', 'abnormal'], autopct='%0.2f%%', ax=ax)
+ax.set_title("Pie chart distribution of normal and abnormal labels", fontsize=16)
+ax.legend()
+
+st.pyplot(fig) # Display the plot in Streamlit
 
 df.drop(['id','attack_cat'],axis=1,inplace=True) # dropping these columns from the dataframe
 
@@ -68,15 +73,6 @@ y = df.iloc[:,-1] # Indicates that the last column is considered the target vari
 st.header("Feature Selection")
 
 fit = best_features.fit(X,y)
-
-feature_scores = pd.DataFrame({'feature': X.columns, 'score': fit.scores_})
-feature_scores.sort_values(by='score', ascending=True, inplace=True)
-
-fig = go.Figure(go.Bar(x=feature_scores['score'].head(20), y=feature_scores['feature'].head(20), orientation='h')) # Creating the Plotly bar chart
-fig.update_layout(title="Top 20 Features by Score", height=800, showlegend=False) # Update the layout
-
-# Display the chart using Streamlit
-st.plotly_chart(fig)
 
 X = df.iloc[:,:-1]
 y = df.iloc[:,-1]
