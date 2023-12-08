@@ -55,7 +55,7 @@ df.drop(['id','attack_cat'],axis=1,inplace=True) # dropping these columns from t
 
 st.header("Data Pre-Processing")
 
-st.write("In Data Pre-Processing, first we are checking if there are any null values, second we are encoding categorical columns")
+st.write("In data pre-processing, the first step is to check for any null values, followed by encoding categorical columns.")
 
 df_numeric = df.select_dtypes(include=[np.number]) # Select numeric columns
 df_cat = df.select_dtypes(exclude=[np.number])
