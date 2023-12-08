@@ -100,7 +100,7 @@ for label in list(df_cat['proto'].value_counts().index)[::-1][1:]: feature_names
 
 st.header("Training and Splitting the data")
 st.write("Firstly, we split the training and testing data in an 80:20 ratio")
-st.write("We import algorithms from the sklearn library and feed the data. After that, we obtain metrics such as accuracy, precision, recall, and F1-score as follows")
+st.write("We import all the machine learning algorithms from the sklearn library and feed the data. After that, we obtain metrics such as accuracy, precision, recall, and F1-score as follows")
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0, stratify=y)
 
