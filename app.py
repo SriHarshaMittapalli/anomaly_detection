@@ -79,7 +79,7 @@ best_features = SelectKBest(score_func = chi2, k = 'all')
 X = df.iloc[:,4:-2]
 y = df.iloc[:,-1] # Indicates that the last column is considered the target variable
 
-st.header("Feature Selection")
+# st.header("Feature Selection")
 
 fit = best_features.fit(X,y)
 
@@ -98,6 +98,10 @@ np.shape(X)
 for label in list(df_cat['state'].value_counts().index)[::-1][1:]: feature_names.insert(0,label)
 for label in list(df_cat['service'].value_counts().index)[::-1][1:]: feature_names.insert(0,label)
 for label in list(df_cat['proto'].value_counts().index)[::-1][1:]: feature_names.insert(0,label)
+
+st.header("Training and Splitting the data")
+st.write("Firstly, we split the training and testing data in an 80:20 ratio")
+st.write("We import algorithms from the sklearn library and feed the data. After that, we obtain metrics such as accuracy, precision, recall, and F1-score as follows")
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0, stratify=y)
 
