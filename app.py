@@ -28,7 +28,7 @@ dfs.append(pd.read_csv('UNSW_NB15_training-set.csv'))
 dfs.append(pd.read_csv('UNSW_NB15_testing-set.csv'))
 df = pd.concat(dfs).reset_index(drop=True)  # Concat all to a single df
 
-st.write("Printing the first 10 rows in the dataframe.")
+st.write("Printing the first 5 rows in the dataframe.")
 st.dataframe(df.head())
 
 # st.write("Checking whether there are null values in the dataframe.")
