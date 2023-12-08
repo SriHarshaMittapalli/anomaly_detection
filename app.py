@@ -13,6 +13,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 import time
 import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 import warnings
 warnings.filterwarnings('ignore')
