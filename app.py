@@ -47,7 +47,7 @@ st.pyplot(fig) # Display the plot in Streamlit
 # Your data and plot generation
 fig, ax = plt.subplots(figsize=(8, 8))
 df['attack_cat'].value_counts().plot(kind='pie', labels=df['attack_cat'].unique(), autopct='%0.2f%%', ax=ax)
-ax.set_title("Pie chart distribution of normal and abnormal labels", fontsize=16)
+ax.set_title("Pie chart distribution of multi-class labels", fontsize=16)
 ax.legend()
 
 st.pyplot(fig) # Display the plot in Streamlit
