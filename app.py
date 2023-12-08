@@ -13,6 +13,9 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 import time
 import plotly.graph_objects as go
 
+import warnings
+warnings.filterwarnings('ignore')
+
 st.markdown("<h1><a href='https://research.unsw.edu.au/projects/unsw-nb15-dataset' style='text-decoration: none; color: black;'>UNSW_NB15 Dataset</a></h1>", unsafe_allow_html=True)
 
 st.write("The UNSW-NB15 dataset combines synthetic and real-world network data. This dataset has nine types of attacks namely, Fuzzers, Analysis, Backdoors, DoS, Exploits, Generic, Reconnaissance, Shellcode and Worms.")
